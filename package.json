@@ -39,6 +39,7 @@
   "author": "Deniss",
   "license": "ISC",
   "dependencies": {
+    "mapbox-gl": "^1.10.1",
     "swiper": "^5.3.8"
   }
 }

@@ -3,6 +3,8 @@
 @import 'base/normalize';
 
 @import 'layout/header';
-@import 'layout/wrapper';
 @import 'layout/search';
-@import 'layout/footer';
+#map {
+  width: 50%;
+  height: 50%;
+}
