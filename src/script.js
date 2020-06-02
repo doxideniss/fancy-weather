@@ -71,9 +71,6 @@ window.onload = async () => {
   btnSearchHandler();
   await app.setCity(geolocation.info.city);
   app.setLang('en');
-  // document.querySelector('.speak').addEventListener('click', () => {
-  //   speech.speech(document.querySelector('.form__search-field').value);
-  // });
   const mic = document.querySelector('.form__mic');
   mic.addEventListener('click', () => {
     speech.startRecognition();

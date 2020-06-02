@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="container">
+
     <header class="header">
         <div class="header__group">
             <button class="button button--update">
@@ -52,42 +53,44 @@
                 </div>
             </div>
             <div class="weather__current">
-                <div class="weather__current-temp" data-info="currentWeather.temp" data-temp="current"></div><span
-                    class="deg">°</span>
+                <div>
+                    <div class="weather__current-temp" data-info="currentWeather.temp" data-temp="current"></div><span
+                        class="deg">°</span></div>
                 <div class="weather__current-info">
                     <div class="weather__current-icon">
                         <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="weather"  data-info="currentWeather.icon">
                     </div>
-                    <p><span data-info="currentWeather.text"></span></p>
-                    <p><span data-i18n="feel"></span> <span data-info="currentWeather.feel"></span></p>
-                    <p><span data-i18n="wind"></span> <span data-info="currentWeather.wind"></span></p>
-                    <p><span data-i18n="humidity"></span> <span data-info="currentWeather.humidity"></span></p>
+                    <div>
+                        <p><span data-info="currentWeather.text"></span></p>
+                        <p><span data-i18n="feel"></span> <span data-info="currentWeather.feel"></span></p>
+                        <p><span data-i18n="wind"></span> <span data-info="currentWeather.wind"></span></p>
+                        <p><span data-i18n="humidity"></span> <span data-info="currentWeather.humidity"></span></p>
+                    </div>
                 </div>
             </div>
             <div class="weather__next-days">
                 <div class="weather__info-day info-day">
                     <div class="info-day__day" data-day="1" data-i18n="day" data-temp></div>
                     <div class="info-day__temp">
-                        <span data-info="weatherDays.0.temp"></span>°
+                        <div><span data-info="weatherDays.0.temp"></span>°</div>
                         <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="" data-info="weatherDays.0.icon">
                     </div>
                 </div>
                 <div class="weather__info-day info-day">
                     <div class="info-day__day" data-day="2" data-i18n="day" data-temp></div>
                     <div class="info-day__temp">
-                        <span data-info="weatherDays.1.temp"></span>°
+                        <div><span data-info="weatherDays.1.temp"></span>°</div>
                         <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="" data-info="weatherDays.1.icon">
                     </div>
                 </div>
                 <div class="weather__info-day info-day">
                     <div class="info-day__day" data-day="3" data-i18n="day" data-temp></div>
                     <div class="info-day__temp">
-                        <span data-info="weatherDays.2.temp"></span>°
+                        <span data-info="weatherDays.2.temp"></span>°</div>
                         <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="" data-info="weatherDays.2.icon">
                     </div>
                 </div>
             </div>
-        </div>
         <div class="map-box">
             <div id="map" class="map"></div>
             <div class="map__info">

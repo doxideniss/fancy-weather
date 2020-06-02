@@ -38,7 +38,7 @@ export default {
   timer: null,
   async changeBGImage() {
     const url = await imageAPI.getLinkToImage();
-    document.body.style.backgroundImage = `url(${url})`;
+    document.querySelector('.container').style.backgroundImage = `url(${url})`;
   },
   setLang(language) {
     this.lang = language;
