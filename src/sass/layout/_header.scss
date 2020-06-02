@@ -1,0 +1,143 @@
+
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  background: url('./data/spinner.svg') 50% no-repeat;
+  animation: spin 1.4s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  80% {
+    transform: rotate(400deg);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.language-menu {
+  position: relative;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.language-menu__face-button {
+  width: 71px;
+}
+
+.language-menu__face-button--open {
+  border-radius: 5px 5px 0 0
+}
+
+.language-menu__arrow {
+  width: 10px;
+  height: 6px;
+  margin-left: 10px;
+  background: url('./data/arrow.svg') 50% no-repeat;
+  &--open {
+    transform: scaleY(-1);
+  }
+}
+
+.drop-down-menu {
+  position: absolute;
+  z-index: 1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .6s cubic-bezier(.25, .46, .45, .94), border-radius .2s
+}
+
+.drop-down-menu--open {
+  max-height: 240px;
+  height: auto
+}
+
+.drop-down-menu__item {
+  background: rgba(76,82,85,.7);
+  color: hsla(0,0%,100%,.7);
+  width: 71px;
+  border-radius: 0;
+  cursor: auto;
+  &--active {
+    background-color: rgba(180,184,187,.7);
+    color: hsla(0,0%,100%,.7);
+    cursor: pointer;
+    &:hover {
+      background-color: #b4b8bb;
+      color: #fff;
+    }
+  }
+  &:hover {
+    background-color: rgba(180,184,187,.7);
+  }
+  :last-child {
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+.form__search {
+  position: relative;
+}
+
+.form__search-field {
+  width: 274px;
+  height: 44px;
+  padding: 13px 58px 13px 15px;
+  background: rgba(76, 82, 85, 0.4);
+  border: 1px solid rgba(228, 227, 227, 0.2);
+  border-radius: 5px 0 0 5px;
+  color: #fff;
+  font-weight: 400;
+  &::placeholder {
+    color: #fff;
+    font-weight: 400;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.form__mic {
+  width: 15px;
+  height: 17px;
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  background: url('./data/mic.svg');
+  &--active {
+    filter: invert(0.9) sepia(1) saturate(147) hue-rotate(0deg);
+  }
+}
+
+.form__search-btn {
+  border-radius: 0 5px 5px 0;
+  width: 101px;
+}
+
+.form__unit-temp {
+  display: flex;
+  margin-left: 10px;
+  & .button:first-child {
+    border-radius: 5px 0 0 5px;
+  }
+  & .button:last-child {
+    border-radius: 0 5px 5px 0;
+  }
+}

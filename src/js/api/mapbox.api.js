@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-properties */
 import mapboxgl from 'mapbox-gl';
 import geolocation from './geolocation.api';
-import { MAPBOX_API } from './config';
+import { MAPBOX_API } from '../config';
 
 export default {
   map: null,
@@ -13,6 +13,7 @@ export default {
       center: geolocation.info.loc.split(',').reverse(),
       zoom: 11,
     });
+    this.setMarker(...geolocation.info.loc.split(',').reverse());
   },
   setMarker(x, y) {
     new mapboxgl.Marker()

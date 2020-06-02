@@ -6,14 +6,93 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fancy weather</title>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="map"></div>
-<form action="#">
-    <input type="text" class="test">
-    <button type="button" class="mic">mic</button>
-    <button type="button" class="speak">Speak</button>
-</form>
+<div class="container">
+    <header class="header">
+        <form action="#" class="form">
+            <div class="form__group">
+                <button class="button button--update">
+                    <div class="spinner"></div>
+                </button>
+                <div class="form__language-menu language-menu">
+                    <button class="button language-menu__face-button">
+                        <span>en</span>
+                        <span class="language-menu__arrow"></span>
+                    </button>
+                    <div class="drop-down-menu">
+                        <button class="drop-down-menu__item button drop-down-menu__item--active" data-lang="en">en
+                        </button>
+                        <button class="drop-down-menu__item button" data-lang="ru">ru</button>
+                        <button class="drop-down-menu__item button" data-lang="be">be</button>
+                    </div>
+                </div>
+                <div class="form__unit-temp">
+                    <button type="button" class="button button--inactive" data-unit="f">°F</button>
+                    <button type="button" class="button" data-unit="c">°C</button>
+                </div>
+            </div>
+            <div class="form__group">
+                <div class="form__search">
+                    <input type="text" class="form__search-field" data-i18n="placeholder" placeholder="Enter city">
+                    <button type="button" class="form__mic"></button>
+                </div>
+                <button type="button" class="form__search-btn button" data-i18n="search">Search</button>
+            </div>
+        </form>
+    </header>
+    <main class="main">
+        <div class="weather">
+            <div class="weather__title">
+                <div class="weather__city">
+                    Minsk, Belarus
+                </div>
+                <div class="weather__date">
+                    <span data-i18n="dayReduction">Mon</span> <span data-info="currentDate">28</span> <span
+                        data-i18n="month">October</span> <span data-info="currentTime">17:23</span>
+                </div>
+            </div>
+            <div class="weather__current">
+                <div class="weather__current-temp" data-info="currentTemp" data-temp="current">10<span class="deg">°</span></div>
+                <div class="weather__current-info">
+                    <div class="weather__current-icon" data-info="currentIcon">
+                        <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="weather">
+                    </div>
+                    <p><span data-info="currentDescr"></span></p>
+                    <p><span data-i18n="feel"></span> <span data-info="currentFeel"></span></p>
+                    <p><span data-i18n="wind"></span> <span data-info="currentWind"></span></p>
+                    <p><span data-i18n="humidity"></span> <span data-info="currentHumidity"></span></p>
+                </div>
+            </div>
+            <div class="weather__next-days">
+                <div class="weather__info-day info-day">
+                    <div class="info-day__day" data-day="1" data-i18n="day">tuesday</div>
+                    <div class="info-day__temp">
+                        <span data-temp="1">7</span>°
+                        <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="">
+                    </div>
+                </div>
+                <div class="weather__info-day info-day">
+                    <div class="info-day__day" data-day="2" data-i18n="day">tuesday</div>
+                    <div class="info-day__temp">
+                        <span data-temp="2">7</span>°
+                        <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="">
+                    </div>
+                </div>
+                <div class="weather__info-day info-day">
+                    <div class="info-day__day" data-day="3" data-i18n="day">tuesday</div>
+                    <div class="info-day__temp">
+                        <span data-temp="3">7</span>°
+                        <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <div id="map"></div>
+        </div>
+    </main>
+</div>
 </body>
 </html>

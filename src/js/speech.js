@@ -10,18 +10,25 @@ export default {
 
     this.speechSynthesisMSG = new SpeechSynthesisUtterance();
 
-    const test = document.querySelector('.test');
-    this.recognition.addEventListener('result', (event) => {
-      const transcript = [...event.results].map((result) => result[0].transcript).join('');
-      test.value = transcript;
-      this.recognitionStarted = false;
-    });
     this.recognition.addEventListener('start', () => {
       this.recognitionStarted = true;
     });
+
+    const searchField = document.querySelector('.form__search-field');
+    const mic = document.querySelector('.form__mic');
+    this.recognition.addEventListener('result', (event) => {
+      const transcript = [...event.results].map((result) => result[0].transcript).join('');
+      searchField.value = transcript;
+    });
+    this.recognition.addEventListener('end', () => {
+      this.recognitionStarted = false;
+      mic.classList.remove('form__mic--active');
+    });
   },
   startRecognition() {
-    if (!this.recognitionStarted) this.recognition.start();
+    if (this.recognitionStarted) return;
+
+    this.recognition.start();
   },
   speech(text) {
     this.speechSynthesisMSG.text = text;

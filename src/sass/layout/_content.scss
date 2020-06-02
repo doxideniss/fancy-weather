@@ -1,0 +1,44 @@
+.main {
+  margin-top: 57px;
+  display: flex;
+}
+
+.weather {
+  color: #fff;
+  font-weight: 700;
+}
+
+.weather__city {
+  font-size: 44px;
+  margin-bottom: 5px;
+}
+
+.weather__date {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.weather__current{
+  display: flex;
+  .deg {
+    font-size: 100px;
+    vertical-align: top;
+  }
+}
+
+.weather__current-temp {
+  font-size: 306px;
+  margin-right: 35px;
+}
+
+.weather__current-icon {
+  margin-bottom: 45px;
+  img {
+    width: 150px;
+  }
+}
+
+.weather__next-days {
+  display: flex;
+  justify-content: space-between;
+}

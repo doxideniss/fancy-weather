@@ -93,7 +93,7 @@ module.exports = (env, options) => {
                 reloadAll: true,
               },
             },
-            'css-loader',
+            { loader: 'css-loader', options: { url: false, sourceMap: true } },
             'sass-loader',
           ],
         },
