@@ -36,7 +36,7 @@ const updateHandlers = () => {
 };
 
 const unitTempHandlers = () => {
-  const unitBox = document.querySelector('.form__unit-temp');
+  const unitBox = document.querySelector('.header__unit-temp');
   unitBox.addEventListener('click', (e) => {
     if (e.target.classList.contains('button') && e.target.classList.contains('button--inactive')) {
       unitBox.querySelectorAll('button').forEach((btn) => {
@@ -54,7 +54,6 @@ const btnSearchHandler = () => {
   btnSearch.addEventListener('click', (e) => {
     e.preventDefault();
     const search = inputSearch.value;
-    console.log(search);
     if (search !== '') {
       app.setCity(inputSearch.value);
     }
@@ -63,13 +62,14 @@ const btnSearchHandler = () => {
 
 window.onload = async () => {
   app.changeBGImage();
-  await geolocation.get();
+  await geolocation.init();
   mapbox.init();
   speech.init();
   langDropDownHandlers();
   updateHandlers();
   unitTempHandlers();
   btnSearchHandler();
+  await app.setCity(geolocation.info.city);
   app.setLang('en');
   // document.querySelector('.speak').addEventListener('click', () => {
   //   speech.speech(document.querySelector('.form__search-field').value);

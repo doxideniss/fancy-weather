@@ -11,9 +11,12 @@ export default {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
       center: geolocation.info.loc.split(',').reverse(),
-      zoom: 11,
+      zoom: 9,
     });
-    this.setMarker(...geolocation.info.loc.split(',').reverse());
+  },
+  setCenter(x, y) {
+    this.map.setCenter([x, y]);
+    this.setMarker(x, y);
   },
   setMarker(x, y) {
     new mapboxgl.Marker()

@@ -6,6 +6,7 @@
 .weather {
   color: #fff;
   font-weight: 700;
+  width: 50%;
 }
 
 .weather__city {
@@ -38,7 +39,55 @@
   }
 }
 
+.weather__current-info {
+  p {
+    margin-top: 10px;
+  }
+}
+
 .weather__next-days {
   display: flex;
   justify-content: space-between;
+}
+
+.weather__info-day {
+  & + .weather__info-day {
+    margin-left: 50px;
+  }
+}
+
+.info-day__day {
+  font-size: 22px;
+}
+
+.info-day__temp {
+  font-size: 60px;
+  img {
+    width: 70px;
+  }
+}
+
+.map-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.map {
+  margin-left: auto;
+  width: 450px;
+  height: 500px;
+  border-radius: 10px 10px 0 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 75%, 100% 100%, 85% 85%, 0 85%);
+}
+
+.map__info {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: right;
+  color: #fff;
+  p + p {
+    margin-top: 15px;
+  }
 }

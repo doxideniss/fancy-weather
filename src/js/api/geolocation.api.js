@@ -2,7 +2,7 @@ import { GEO_API, OPEN_CAGE_DATA_API } from '../config';
 
 export default {
   info: {},
-  async get() {
+  async init() {
     const res = await fetch(`https://ipinfo.io/json?token=${GEO_API}`);
     this.info = await res.json();
   },
