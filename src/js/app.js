@@ -80,6 +80,10 @@ export default {
   },
   async setCity(city) {
     const dataWeather = await weatherAPI.get(city, this.lang);
+    if (dataWeather.error) {
+      alert(dataWeather.error.message);
+      return;
+    }
     const geoInfo = await geolocationAPI.getInfoByCity(city, this.lang);
     this.lat = dataWeather.location.lat;
     this.lon = dataWeather.location.lon;
