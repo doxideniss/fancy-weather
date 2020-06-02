@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  z-index: 3;
 }
 
 .header__group {
@@ -60,7 +59,7 @@
 
 .drop-down-menu {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   max-height: 0;
   overflow: hidden;
   transition: max-height .6s cubic-bezier(.25, .46, .45, .94), border-radius .2s
