@@ -16,9 +16,11 @@ export default {
 
     const searchField = document.querySelector('.form__search-field');
     const mic = document.querySelector('.form__mic');
+    const searchBtn = document.querySelector('.form__search-btn');
     this.recognition.addEventListener('result', (event) => {
       const transcript = [...event.results].map((result) => result[0].transcript).join('');
       searchField.value = transcript;
+      searchBtn.click();
     });
     this.recognition.addEventListener('end', () => {
       this.recognitionStarted = false;
