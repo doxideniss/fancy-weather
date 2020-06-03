@@ -93,7 +93,7 @@ export default {
     this.map.lat = geoInfo.results[0].annotations.DMS.lat;
     this.map.lon = geoInfo.results[0].annotations.DMS.lng;
 
-    this.currentWeather.date = new Date(dataWeather.location.localtime);
+    this.currentWeather.date = new Date(new Date().toLocaleString('en-US', { timeZone: geoInfo.results[0].annotations.timezone.name }));
     this.currentWeather.dateOffset = geoInfo.results[0].annotations.timezone.offset_sec / 3600;
     this.currentWeather.tempC = dataWeather.current.temp_c;
     this.currentWeather.tempF = dataWeather.current.temp_f;
@@ -113,7 +113,7 @@ export default {
       });
     });
 
-    this.updateWeatherInfo();
+    this.updateLang();
   },
   updateWeatherInfo() {
     mapboxAPI.setCenter(this.lon, this.lat);
