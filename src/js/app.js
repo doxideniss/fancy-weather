@@ -44,7 +44,7 @@ export default {
     this.lang = language;
     this.updateLang();
   },
-  async updateLang() {
+  async updateLang(withText = true) {
     document.querySelectorAll('[data-i18n]').forEach((element) => {
       const data = lang[this.lang][element.dataset.i18n];
       if (element.dataset.i18n === 'placeholder') {
@@ -63,10 +63,12 @@ export default {
         element.textContent = data;
       }
     });
-    const dataWeather = await weatherAPI.get(this.city, this.lang);
-    const geoInfo = await geolocationAPI.getInfoByCity(this.city, this.lang);
-    this.currentWeather.text = dataWeather.current.condition.text;
-    this.cityWithCountry = `${geoInfo.results[0].components.city ? geoInfo.results[0].components.city : geoInfo.results[0].components.state}, ${geoInfo.results[0].components.country}`;
+    if (withText) {
+      const dataWeather = await weatherAPI.get(this.city, this.lang);
+      const geoInfo = await geolocationAPI.getInfoByCity(this.city, this.lang);
+      this.currentWeather.text = dataWeather.current.condition.text;
+      this.cityWithCountry = `${geoInfo.results[0].components.city ? geoInfo.results[0].components.city : geoInfo.results[0].components.state}, ${geoInfo.results[0].components.country}`;
+    }
     this.updateWeatherInfo();
   },
   setUnitOfTemp(unit) {
@@ -113,7 +115,7 @@ export default {
       });
     });
 
-    this.updateLang();
+    this.updateLang(false);
   },
   updateWeatherInfo() {
     mapboxAPI.setCenter(this.lon, this.lat);
